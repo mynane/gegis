@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:gegis/views/detail.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ListComponent extends StatefulWidget {
   @override
@@ -27,7 +28,15 @@ class _ListState extends State<ListComponent> {
     // Navigator.of(context).push(new MaterialPageRoute(
     //   builder: (_) => new DetailPage(id),
     // ));
-    Navigator.of(context).pushNamed('/setting');
+    Navigator.of(context).pushNamed('/web');
+    // Fluttertoast.showToast(
+    //     msg: "This is Center Short Toast",
+    //     toastLength: Toast.LENGTH_SHORT,
+    //     gravity: ToastGravity.BOTTOM,
+    //     timeInSecForIos: 1,
+    //     bgcolor: "#e74c3c",
+    //     textcolor: '#ffffff'
+    // );
   }
   @override
   Widget build(BuildContext context) {
@@ -36,7 +45,7 @@ class _ListState extends State<ListComponent> {
       itemBuilder: (BuildContext context, int index) {
         return new Card(
           child: new Container(
-            padding: new EdgeInsets.all(10.0),
+            padding: new EdgeInsets.all(0.0),
             child: new ListTile(
               subtitle: new Container(
                 child: new Column(

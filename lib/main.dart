@@ -5,6 +5,7 @@ import 'package:gegis/views/thirdPage.dart';
 import 'package:gegis/views/setting.dart';
 import 'package:gegis/theme.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
+import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 void main() {
   debugPaintSizeEnabled = true;
@@ -56,7 +57,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         ),
       ),
       routes: <String, WidgetBuilder> {
-        '/setting': (BuildContext context) => new SettingPage(title: '设置页面')
+        '/setting': (BuildContext context) => new SettingPage(title: '设置页面'),
+        "/web": (_) => new WebviewScaffold(
+          url: "https://www.baidu.com",
+          userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Mobile Safari/537.36',
+          appBar: new AppBar(
+            title: new Text("欢迎光临"),
+          ),
+        )
       },
     );
   }
